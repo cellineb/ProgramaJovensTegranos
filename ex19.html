@@ -1,0 +1,127 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Exercício 19</title>
+<style>
+
+    body {
+        font-family: verdana;
+    }
+    
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    fieldset {
+        width: 500px;
+        height: 330px;
+    }
+    
+    input {
+        margin-left: 10px;
+    }
+    
+    div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    h1, h2 {
+        text-align: center;
+    }
+    
+    fieldset, button, input {
+        border-radius: 5px;
+    }
+
+    .botao
+    {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+</style>
+</head>
+<body>
+    <h1>Programa Jovens Tegranos</h1>
+    <h2>Lista de Exercícios de Lógica e Programação</h2>
+    <form>
+    <fieldset>
+    <legend>Exercício 19</legend>
+        <div>
+            <label>Uma empresa vai conceder um aumento percentual de salário aos seus funcionários dependendo de quanto cada pessoa ganha, conforme tabela ao lado. Fazer um programa para ler o salário de uma pessoa, daí mostrar qual o novo salário dessa pessoa depois do aumento, quanto foi o aumento e qual foi a porcentagem de aumento.
+            </label>
+        </div>
+        <div>
+            <label>Digite o salário da pessoa: </label> 
+            <input type="number" name="salario" id="salario" required>
+        </div>
+        <div class=botao>
+        <button onclick="calcular()" type="button">CALCULAR</button>
+        </div>
+        <div>
+        <label id="resultado1"></label>
+        </div>
+        <div>
+        <label id="resultado2"></label>
+        </div>
+        <div>
+        <label id="resultado3"></label>
+        </div>
+    </fieldset>
+    </form>
+    
+    <script>
+    
+        function calcular() {
+
+        	var salario = parseFloat(document.getElementById("salario").value);
+
+        	var nsalario;
+        	var aumento;
+        	var porcentagem;
+
+        	if (salario<=999)
+        	{
+        		aumento = (salario * 0.20);
+        		nsalario = (salario + aumento);
+        		porcentagem = 20; 
+        	}
+
+        	else if (salario>=1000 && salario<=2999)
+        	{
+        		aumento = (salario * 0.15);
+        		nsalario = (salario + aumento);
+        		porcentagem = 15;
+        	}
+
+        	else if (salario>=3000 && salario<=7999)
+        	{
+        		aumento = (salario * 0.10);
+        		nsalario = (salario + aumento);
+        		porcentagem = 10;
+        	}
+
+        	else
+        	{
+        		aumento = (salario * 0.05);
+        		nsalario = (salario + aumento);
+        		porcentagem = 5;
+        	}
+
+        	var resultado1 = document.getElementById("resultado1");
+        	var resultado2 = document.getElementById("resultado2");
+        	var resultado3 = document.getElementById("resultado3");
+
+        	resultado1.textContent = "Novo salário = R$" + nsalario.toFixed(2);
+        	resultado2.textContent = "Aumento = R$" + aumento.toFixed(2);
+        	resultado3.textContent = "Porcentagem = " + porcentagem + "%";
+
+        }
+        
+    </script>
+</body>
+</html>

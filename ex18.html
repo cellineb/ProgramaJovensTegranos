@@ -1,0 +1,112 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Exercício 18</title>
+<style>
+
+    body {
+        font-family: verdana;
+    }
+    
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    fieldset {
+        width: 500px;
+        height: 330px;
+    }
+    
+    input {
+        margin-left: 10px;
+    }
+    
+    div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    h1, h2 {
+        text-align: center;
+    }
+    
+    fieldset, button, input {
+        border-radius: 5px;
+    }
+
+    .botao
+    {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+</style>
+</head>
+<body>
+    <h1>Programa Jovens Tegranos</h1>
+    <h2>Lista de Exercícios de Lógica e Programação</h2>
+    <form>
+    <fieldset>
+    <legend>Exercício 18</legend>
+        <div>
+            <label>Deseja-se converter uma medida de temperatura da escala Celsius para Fahrenheit ou vice-versa. Para isso, você deve construir um programa que leia a letra "C" ou "F" indicando em qual escala vai ser informada uma temperatura. Em seguida, o programa deve mostrar a temperatura na outra escala com duas casas decimais. Você deve pesquisar as fórmulas para conversão de Fahrenheit->Celsius e de Celsius->Fahrenheit.
+            </label>
+        </div>
+        <div>
+            <label>Você vai digitar a temperatura em qual escala (C/F)? </label>
+        </div>
+        <div> 
+            <input type="text" name="escala" id="escala" required>
+        </div>
+        <div class=botao>
+        <button onclick="escolha()" type="button">CALCULAR</button>
+        </div>
+        <div>
+        <label id="resultado"></label>
+        </div>
+    </fieldset>
+    </form>
+    
+    <script>
+    
+        function escolha() {
+
+        	var escala = document.getElementById("escala").value;
+
+        	if (escala=="C" || escala=="c")
+        	{
+        		calcularc();
+        	}
+        	else if (escala=="F" || escala=="f")
+        	{
+        		calcularf();
+        	}
+        	
+        }
+
+        function calcularc() {
+
+        	var c = prompt("Digite a temperatura em Celsius: ");
+        	var f = ((c*1.8)+32).toFixed(2);
+
+        	var resultado = document.getElementById("resultado");
+        	resultado.textContent = "Temperatura equivalente em Fahrenheit: " + f;
+
+        }
+
+        function calcularf() {
+
+        	var f = prompt("Digite a temperatura em Fahrenheit: ");
+        	var c = ((f-32)/1.8).toFixed(2);
+
+        	var resultado = document.getElementById("resultado");
+        	resultado.textContent = "Temperatura equivalente em Celsius: " + c;
+
+        }
+        
+    </script>
+</body>
+</html>

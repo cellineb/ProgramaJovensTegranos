@@ -1,0 +1,107 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Exercício 26</title>
+<style>
+
+    body {
+        font-family: verdana;
+    }
+    
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    fieldset {
+        width: 450px;
+        height: 250px;
+    }
+    
+    input {
+        margin-left: 10px;
+    }
+    
+    div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    h1, h2 {
+        text-align: center;
+    }
+    
+    fieldset, button, input {
+        border-radius: 5px;
+    }
+
+    .botao
+    {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+</style>
+</head>
+<body>
+    <h1>Programa Jovens Tegranos</h1>
+    <h2>Lista de Exercícios de Lógica e Programação</h2>
+    <form>
+    <fieldset>
+    <legend>Exercício 26</legend>
+        <div>
+            <label>Fazer um programa para receber uma palavra (string); Calcular a quantidade de vogais e a quantidade consoantes da palavra; Exibir os valores calculados.
+            </label>
+        </div>
+        <div>
+            <label>Digite uma palavra: </label>  
+           	<input type="text" name="palavra" id="palavra" required>
+        </div>
+        <div class=botao>
+        <button onclick="calcular()" type="button">CALCULAR</button>
+        </div>
+        <div>
+        <label id="resultado1"></label>
+        </div>
+        <div>
+        <label id="resultado2"></label>
+        </div>
+    </fieldset>
+    </form>
+    
+    <script>
+    
+        function calcular() {
+
+        	var palavra = document.getElementById("palavra").value;
+
+        	var vet = palavra.split("");
+
+        	var i;
+        	var vogais = 0;
+        	var consoantes = 0;
+
+        	for (i=0; i < vet.length; i++)
+        	{
+        		if (vet[i]=='a' || vet[i]=='e' || vet[i]=='i' || vet[i]=='o' || vet[i]=='u' || vet[i]=='A' || vet[i]=='E' || vet[i]=='I' || vet[i]=='O' || vet[i]=='U')
+        		{
+        			vogais = vogais + 1;
+        		}
+        		else 
+        		{
+        			consoantes = consoantes + 1;
+        		}
+        	}
+
+        	var resultado1 = document.getElementById("resultado1");
+        	resultado1.textContent = "Vogais = " + vogais;
+
+        	var resultado2 = document.getElementById("resultado2");
+        	resultado2.textContent = "Consoantes = " + consoantes;
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Exercício 25</title>
+<style>
+
+    body {
+        font-family: verdana;
+    }
+    
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    fieldset {
+        width: 500px;
+        height: 450px;
+    }
+    
+    input {
+        margin-left: 10px;
+    }
+    
+    div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    h1, h2 {
+        text-align: center;
+    }
+    
+    fieldset, button, input {
+        border-radius: 5px;
+    }
+
+    .botao
+    {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    p
+    {
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+    
+</style>
+</head>
+<body>
+    <h1>Programa Jovens Tegranos</h1>
+    <h2>Lista de Exercícios de Lógica e Programação</h2>
+    <form>
+    <fieldset>
+    <legend>Exercício 25</legend>
+        <div>
+            <label>Receber valores numéricos para o dia e o mês de nascimento de uma pessoa; Exibir o signo da pessoa de acordo com os seguintes critérios:
+            <p>Áries: de 21 de março a 20 de abril;</p>
+            <p>Touro: de 21 de abril a 20 de maio;</p>
+            <p>Gêmeos: de 21 de maio a 20 de junho;</p>
+            <p>Câncer: de 21 de junho a 22 de julho;</p>
+            <p>Leão: de 23 de julho a 22 de agosto;</p>
+            <p>Virgem: de 23 de agosto a 22 de setembro;</p>
+            <p>Libra: de 23 de setembro a 22 de outubro;</p>
+            <p>Escorpião: de 23 de outubro a 21 de novembro;</p>
+            <p>Sagitário: de 22 de novembro a 21 de dezembro;</p>
+            <p>Capricórnio: de 22 de dezembro a 20 de janeiro;</p>
+            <p>Aquário: de 21 de janeiro a 18 de fevereiro;</p>
+            <p>Peixes: de 19 de fevereiro a 20 de março;</p>
+            </label>
+        </div>
+        <div>
+            <label>Data de nascimento: </label> 
+        	<input type="date" name="data" id="data" required>
+        </div>
+        <div class=botao>
+        <button onclick="calcular()" type="button">CALCULAR</button>
+        </div>
+        <div>
+        <label id="resultado"></label>
+        </div>
+    </fieldset>
+    </form>
+    
+    <script>
+    
+        function calcular() {
+
+        	var data = new Date(document.getElementById("data").value);
+
+            var dia = data.getDate();
+            var mes = data.getMonth();
+
+            dia = dia + 1;
+            mes = mes + 1;
+
+            var resultado = document.getElementById("resultado");
+        	
+            if (mes == 1)
+            {
+                if (dia<=20)
+                {
+                    resultado.textContent = "Signo = Capricórnio";
+                }
+                else if (dia>=21)
+                {
+                    resultado.textContent = "Signo = Aquário";
+                }
+            }
+
+            else if (mes == 2)
+            {
+                if (dia<=18)
+                {
+                    resultado.textContent = "Signo = Aquário";
+                }
+                else if (dia>=19)
+                {
+                    resultado.textContent = "Signo = Peixes";
+                }
+            }
+
+            else if (mes == 3)
+            {
+                if (dia<=20)
+                {
+                    resultado.textContent = "Signo = Peixes";
+                }
+                else if (dia>=21)
+                {
+                    resultado.textContent = "Signo = Áries";
+                }
+            }
+
+            else if (mes == 4)
+            {
+                if (dia<=20)
+                {
+                    resultado.textContent = "Signo = Áries";
+                }
+                else if (dia>=21)
+                {
+                    resultado.textContent = "Signo = Touro";
+
+                }
+            }
+
+            else if (mes == 5)
+            {
+                if (dia<=20)
+                {
+                    resultado.textContent = "Signo = Touro";
+                }
+                else if (dia>=21)
+                {
+                    resultado.textContent = "Signo = Gêmeos";
+                }
+            }
+
+            else if (mes == 6)
+            {
+                if (dia<=20)
+                {
+                    resultado.textContent = "Signo = Gêmeos";
+                }
+                else if (dia>=21)
+                {
+                    resultado.textContent = "Signo = Câncer";
+                }
+            }
+
+            else if (mes == 7)
+            {
+                if (dia<=22)
+                {
+                    resultado.textContent = "Signo = Câncer";
+                }
+                else if (dia>=23)
+                {
+                    resultado.textContent = "Signo = Leão";
+                }
+            }
+
+            else if (mes == 8)
+            {
+                if (dia<=22)
+                {
+                    resultado.textContent = "Signo = Leão";
+                }
+                else if (dia>=23)
+                {
+                    resultado.textContent = "Signo = Virgem";
+                }
+            }
+
+            else if (mes == 9)
+            {
+                if (dia<=22)
+                {
+                    resultado.textContent = "Signo = Virgem";
+                }
+                else if (dia>=23)
+                {
+                    resultado.textContent = "Signo = Libra";
+                }
+            }
+
+            else if (mes == 10)
+            {
+                if (dia<=22)
+                {
+                    resultado.textContent = "Signo = Libra";
+                }
+                else if (dia>=23)
+                {
+                    resultado.textContent = "Signo = Escorpião";
+                }
+            }
+
+            else if (mes == 11)
+            {
+                if (dia<=21)
+                {
+                    resultado.textContent = "Signo = Escorpião";
+                }
+                else if (dia>=22)
+                {
+                    resultado.textContent = "Signo = Sargitário";
+                }
+            }
+
+            else if (mes == 12)
+            {
+                if (dia<=21)
+                {
+                    resultado.textContent = "Signo = Sargitário";
+                }
+                else if (dia>=22)
+                {
+                    resultado.textContent = "Signo = Capricórnio";
+                }
+            }
+
+        }
+        
+    </script>
+</body>
+</html>

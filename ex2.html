@@ -1,0 +1,96 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Exercício 2</title>
+<style>
+
+    body {
+        font-family: verdana;
+    }
+    
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    fieldset {
+        width: 500px;
+        height: 280px;
+    }
+    
+    input {
+        margin-left: 10px;
+    }
+    
+    div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    h1, h2 {
+        text-align: center;
+    }
+    
+    fieldset, button, input {
+        border-radius: 5px;
+    }
+
+    .botao
+    {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    
+
+</style>
+</head>
+<body>
+    <h1>Programa Jovens Tegranos</h1>
+    <h2>Lista de Exercícios de Lógica e Programação</h2>
+    <form>
+    <fieldset>
+    <legend>Exercício 2</legend>
+        <div>
+            <label>Fazer um programa para ler as medidas da base e altura de um retângulo. Em seguida, mostrar o valor da área, perímetro e diagonal deste retângulo, com quatro casas decimais.
+            </label>
+        </div>
+        <div>
+        <div>
+            <label>Base do retângulo: </label> 
+            <input type="number" name="base" id="base" required>
+        </div>
+        <div>
+            <label>Altura do retângulo: </label>
+            <input type="number" name="altura" id="altura" required>
+        </div>
+        <div class=botao>
+        <button onclick="calcular()" type="button">CALCULAR</button>
+        </div>
+        <div>
+        <label id="resultado"></label>
+        </div>
+    </fieldset>
+    </form>
+    
+    <script>
+    
+        function calcular() {
+            var base = parseFloat(document.getElementById("base").value);
+            var altura = parseFloat(document.getElementById("altura").value);
+
+            var area = (base * altura).toFixed(4);
+
+            var perimetro = (2 * (base + altura)).toFixed(4);
+
+            var diagonal = (Math.sqrt(Math.pow(altura, 2) + Math.pow(base, 2))).toFixed(4);
+            
+            var resultado = document.getElementById("resultado");
+            resultado.textContent = "A área do retângulo é " + area + ". O perímetro do retângulo é: " + perimetro + ". A diagonal do retângulo é: " + diagonal;
+        }
+        
+    </script>
+</body>
+</html>

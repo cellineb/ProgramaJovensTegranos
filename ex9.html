@@ -1,0 +1,88 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Exercício 9</title>
+<style>
+
+    body {
+        font-family: verdana;
+    }
+    
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    fieldset {
+        width: 500px;
+        height: 220px;
+    }
+    
+    input {
+        margin-left: 10px;
+    }
+    
+    div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    h1, h2 {
+        text-align: center;
+    }
+    
+    fieldset, button, input {
+        border-radius: 5px;
+    }
+
+    .botao
+    {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+</style>
+</head>
+<body>
+    <h1>Programa Jovens Tegranos</h1>
+    <h2>Lista de Exercícios de Lógica e Programação</h2>
+    <form>
+    <fieldset>
+    <legend>Exercício 9</legend>
+        <div>
+            <label>Fazer um programa para ler uma duração de tempo em segundos, daí imprimir na tela esta duração no formato horas:minutos:segundos.
+            </label>
+        </div>
+        <div>
+            <label>Digite a duração em segundos: </label> 
+            <input type="number" name="segundos" id="segundos" required>
+        </div>
+        <div class=botao>
+        <button onclick="calcular()" type="button">CALCULAR</button>
+        </div>
+        <div>
+        <label id="resultado"></label>
+        </div>
+    </fieldset>
+    </form>
+    
+    <script>
+    
+        function calcular() {
+        	var segundos = parseFloat(document.getElementById("segundos").value);
+
+        	var s = ((segundos%60)%60).toFixed(0);
+
+        	var m = ((segundos/60)%60).toFixed(0);
+
+        	var h = ((segundos/60)/60).toFixed(0);
+        	
+        	var resultado = document.getElementById("resultado");
+        	resultado.textContent = "A duração em horas, minutos e segundos é: " + h + ":" + m + ":" + s;
+        }
+        
+    </script>
+</body>
+</html>

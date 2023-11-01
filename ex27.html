@@ -1,0 +1,103 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Exercício 27</title>
+<style>
+
+    body {
+        font-family: verdana;
+    }
+    
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    fieldset {
+        width: 470px;
+        height: 260px;
+    }
+    
+    input {
+        margin-left: 10px;
+    }
+    
+    div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    h1, h2 {
+        text-align: center;
+    }
+    
+    fieldset, button, input {
+        border-radius: 5px;
+    }
+
+    .botao
+    {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+</style>
+</head>
+<body>
+    <h1>Programa Jovens Tegranos</h1>
+    <h2>Lista de Exercícios de Lógica e Programação</h2>
+    <form>
+    <fieldset>
+    <legend>Exercício 27</legend>
+        <div>
+            <label>Fazer um programa para verificar se um número ou palavra é palíndroma; Exibir como saída se o número ou palavra "é palíndroma" ou "não é palíndroma". Um palíndromo é algo que pode ser lido em qualquer sentido. Ex.: 110011, Reger, Osso.
+            </label>
+        </div>
+        <div>
+            <label>Palavra/Número: </label>  
+           	<input type="text" name="palavra" id="palavra" required>
+        </div>
+        <div class=botao>
+        <button onclick="calcular()" type="button">CALCULAR</button>
+        </div>
+        <div>
+        <label id="resultado"></label>
+        </div>
+    </fieldset>
+    </form>
+    
+    <script>
+    
+        function calcular() {
+
+        	var palavra = document.getElementById("palavra").value;
+
+        	var vet = palavra.split("");
+        	var vet2 = [];
+
+        	var i;
+
+        	var resultado = document.getElementById("resultado");
+
+        	for (i=vet.length; i >= 0; i--)
+        	{
+        		vet2.push(vet[i]);
+        	}
+
+        	var palavra2 = vet2.join("");
+
+        	if (palavra2 == palavra)
+        	{
+        		resultado.textContent = "Saída = É palíndroma";
+        	}
+        	else 
+        	{
+        		resultado.textContent = "Saída = Não palíndroma";
+        	}
+        }
+        
+    </script>
+</body>
+</html>

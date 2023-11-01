@@ -1,0 +1,98 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Exercício 1</title>
+<style>
+
+    body {
+        font-family: verdana;
+    }
+    
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    fieldset {
+        width: 500px;
+        height: 350px;
+    }
+    
+    input {
+        margin-left: 10px;
+    }
+    
+    div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    h1, h2 {
+        text-align: center;
+    }
+    
+    fieldset, button, input {
+        border-radius: 5px;
+    }
+
+    .botao
+    {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    
+
+</style>
+</head>
+<body>
+    <h1>Programa Jovens Tegranos</h1>
+    <h2>Lista de Exercícios de Lógica e Programação</h2>
+    <form>
+    <fieldset>
+    <legend>Exercício 1</legend>
+        <div>
+            <label>Fazer um programa para ler as medidas da largura e comprimento de um terreno retangular com uma casa decimal, bem como o valor do metroquadrado do terreno com duas casas decimais. Em seguida, o programa deve mostrar o valor da área do terreno, bem como o valor do preço do terreno, ambos com duas casas decimais.
+            </label>
+        </div>
+        <div>
+            <label>Largura do terreno:      </label> 
+            <input type="number" name="largura" id="largura" required>
+        </div>
+        <div>
+            <label>Comprimento do terreno:  </label>
+            <input type="number" name="comprimento" id="comprimento" required>
+        </div>
+        <div>
+            <label>Valor do metro quadrado: </label>
+            <input type="number" name="mquadrado" id="mquadrado" required>
+        </div>
+        <div class=botao>
+        <button onclick="calcular()" type="button">CALCULAR</button>
+        </div>
+        <div>
+        <label id="resultado"></label>
+        </div>
+    </fieldset>
+    </form>
+    
+    <script>
+    
+        function calcular() {
+            var largura = document.getElementById("largura").value;
+            var comprimento = document.getElementById("comprimento").value;
+            var valor = document.getElementById("mquadrado").value;
+
+            var area = (largura * comprimento).toFixed(2);
+
+            var preco = (area * valor).toFixed(2);
+            
+            var resultado = document.getElementById("resultado");
+            resultado.textContent = "A área do terreno é " + area + ". O preço do terreno é: " + preco;
+        }
+        
+    </script>
+</body>
+</html>

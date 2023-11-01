@@ -1,0 +1,111 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Exercício 24</title>
+<style>
+
+    body {
+        font-family: verdana;
+    }
+    
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    fieldset {
+        width: 420px;
+        height: 370px;
+    }
+    
+    input {
+        margin-left: 10px;
+    }
+    
+    div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    h1, h2 {
+        text-align: center;
+    }
+    
+    fieldset, button, input {
+        border-radius: 5px;
+    }
+
+    .botao
+    {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .label, .input
+    {
+        text-align: center;
+    }
+    
+</style>
+</head>
+<body>
+    <h1>Programa Jovens Tegranos</h1>
+    <h2>Lista de Exercícios de Lógica e Programação</h2>
+    <form>
+    <fieldset>
+    <legend>Exercício 24</legend>
+        <div>
+            <label>Receber 5 valores numéricos inteiros; Ordenar os valores em ordem crescente; Exibir os valores ordenados.
+            </label>
+        </div>
+        <div class="label">
+            <label>Digite 5 números: </label> 
+        </div>
+        <div class="input">
+        	<input type="number" name="n1" id="n1" required>
+        </div>
+        <div class="input">
+        	<input type="number" name="n2" id="n2" required>
+        </div>
+        <div class="input">
+        	<input type="number" name="n3" id="n3" required>
+        </div>
+        <div class="input">
+        	<input type="number" name="n4" id="n4" required>
+        </div>
+        <div class="input">
+        	<input type="number" name="n5" id="n5" required>
+        </div>
+        <div class=botao>
+        <button onclick="calcular()" type="button">CALCULAR</button>
+        </div>
+        <div>
+        <label id="resultado"></label>
+        </div>
+    </fieldset>
+    </form>
+    
+    <script>
+    
+        function calcular() {
+
+        	var n1 = parseFloat(document.getElementById("n1").value);
+        	var n2 = parseFloat(document.getElementById("n2").value);
+        	var n3 = parseFloat(document.getElementById("n3").value);
+        	var n4 = parseFloat(document.getElementById("n4").value);
+        	var n5 = parseFloat(document.getElementById("n5").value);
+
+        	var vet = [n1, n2, n3, n4, n5];
+
+        	vet.sort((a, b) => a - b);
+
+        	var resultado = document.getElementById("resultado");
+        	resultado.textContent = vet.join(", ");
+
+        }
+        
+    </script>
+</body>
+</html>

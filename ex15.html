@@ -1,0 +1,107 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Exercício 15</title>
+<style>
+
+    body {
+        font-family: verdana;
+    }
+    
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    fieldset {
+        width: 500px;
+        height: 320px;
+    }
+    
+    input {
+        margin-left: 10px;
+    }
+    
+    div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    h1, h2 {
+        text-align: center;
+    }
+    
+    fieldset, button, input {
+        border-radius: 5px;
+    }
+
+    .botao
+    {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    p
+    {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    
+</style>
+<body>
+    <h1>Programa Jovens Tegranos</h1>
+    <h2>Lista de Exercícios de Lógica e Programação</h2>
+    <form>
+    <fieldset>
+    <legend>Exercício 15</legend>
+        <div>
+            <label>Fazer um programa para ler a quantidade de glicose no sangue de uma pessoa e depois mostrar na tela a classificação desta glicose de acordo com a tabela de referência abaixo:
+            <p>Classificação Glicose</p>
+            <p>Normal -> Até 100 mg/dl</p>
+            <p>Elevado -> Entre 100 e 140 mg/dl</p>
+            <p>Diabetes -> Maior que 140 mg/dl</p>
+            </label>
+        </div>
+        <div>
+            <label>Digite a medida da glicose: </label> 
+            <input type="number" name="medida" id="medida" required>
+        </div>
+        <div class=botao>
+        <button onclick="calcular()" type="button">CALCULAR</button>
+        </div>
+        <div>
+        <label id="resultado"></label>
+        </div>
+    </fieldset>
+    </form>
+    
+    <script>
+    
+        function calcular() {
+
+            var medida = parseFloat(document.getElementById("medida").value);
+
+            var resultado = document.getElementById("resultado");
+
+            if (medida<=100)
+            {
+                resultado.textContent = "Classificação = Normal";
+            }
+
+            else if (medida>100 && medida<=140)
+            {
+                resultado.textContent = "Classificação = Elevado";
+            }
+
+            else
+            {
+                resultado.textContent = "Classificação = Diabetes";
+            }
+
+        }
+        
+    </script>
+</body>
+</html>

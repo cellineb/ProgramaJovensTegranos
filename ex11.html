@@ -1,0 +1,103 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Exercício 11</title>
+<style>
+
+    body {
+        font-family: verdana;
+    }
+    
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    fieldset {
+        width: 500px;
+        height: 320px;
+    }
+    
+    input {
+        margin-left: 10px;
+    }
+    
+    div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    h1, h2 {
+        text-align: center;
+    }
+    
+    fieldset, button, input {
+        border-radius: 5px;
+    }
+
+    .botao
+    {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+</style>
+</head>
+<body>
+    <h1>Programa Jovens Tegranos</h1>
+    <h2>Lista de Exercícios de Lógica e Programação</h2>
+    <form>
+    <fieldset>
+    <legend>Exercício 11</legend>
+        <div>
+            <label>Fazer um programa para ler as duas notas que um aluno obteve no primeiro e segundo semestres de uma disciplina anual. Em seguida, mostrar a nota final que o aluno obteve (com uma casa decimal) no ano juntamente com um texto explicativo. Caso a nota final do aluno seja inferior a 60.00, mostrar a mensagem "REPROVADO".
+            </label>
+        </div>
+        <div>
+            <label>Digite a primeira nota: </label> 
+            <input type="number" name="n1" id="n1" required>
+        </div>
+        <div>
+        	<label>Digite a segunda nota: </label>
+        	<input type="number" name="n2" id="n2" required>
+        </div>
+        <div class=botao>
+        <button onclick="calcular()" type="button">CALCULAR</button>
+        </div>
+        <div>
+        <label id="resultado1"></label>
+        </div>
+        <div>
+        <label id="resultado2"></label>
+        </div>
+    </fieldset>
+    </form>
+    
+    <script>
+    
+        function calcular() {
+
+        	var n1 = parseFloat(document.getElementById("n1").value);
+        	var n2 = parseFloat(document.getElementById("n2").value);
+
+        	var nfinal = (n1 + n2).toFixed(1);
+
+        	var resultado1 = document.getElementById("resultado1");
+            var resultado2 = document.getElementById("resultado2");
+
+        	if (nfinal<60){
+        		resultado1.textContent = "Nota final = " + nfinal;
+                resultado2.textContent = "REPROVADO";
+        	}
+        	else {
+        		resultado1.textContent = "Nota final = " + nfinal;
+                resultado2.textContent = "APROVADO";
+        	}
+
+        }
+        
+    </script>
+</body>
+</html>

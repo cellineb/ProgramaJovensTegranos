@@ -1,0 +1,119 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Exercício 17</title>
+<style>
+
+    body {
+        font-family: verdana;
+    }
+    
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    fieldset {
+        width: 500px;
+        height: 270px;
+    }
+    
+    input {
+        margin-left: 10px;
+    }
+    
+    div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    h1, h2 {
+        text-align: center;
+    }
+    
+    fieldset, button, input {
+        border-radius: 5px;
+    }
+
+    .botao
+    {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .input, .label
+    {
+        text-align: center;
+    }
+    
+</style>
+</head>
+<body>
+    <h1>Programa Jovens Tegranos</h1>
+    <h2>Lista de Exercícios de Lógica e Programação</h2>
+    <form>
+    <fieldset>
+    <legend>Exercício 17</legend>
+        <div>
+            <label>Fazer um programa para ler dois números inteiros, e dizer se um número é múltiplo do outro. Os números podem ser digitados em qualquer ordem.
+            </label>
+        </div>
+        <div class="label">
+            <label>Digite dois números inteiros: </label>
+        </div>
+        <div class="input"> 
+            <input type="number" name="n1" id="n1" required>
+        </div>
+        <div class="input"> 
+            <input type="number" name="n2" id="n2" required>
+        </div>
+        <div class=botao>
+        <button onclick="calcular()" type="button">CALCULAR</button>
+        </div>
+        <div>
+        <label id="resultado"></label>
+        </div>
+    </fieldset>
+    </form>
+    
+    <script>
+    
+        function calcular() {
+
+        	var n1 = parseFloat(document.getElementById("n1").value);
+        	var n2 = parseFloat(document.getElementById("n2").value);
+
+        	var resultado = document.getElementById("resultado");
+
+        	if (n1>n2)
+        	{
+        		if (n1%n2==0)
+        		{
+        			resultado.textContent = "São múltiplos.";
+        		}
+        		else
+        		{
+        			resultado.textContent = "Não são múltiplos.";
+        		}
+        	}
+
+        	else 
+        	{
+        		if (n2%n1==0)
+        		{
+        			resultado.textContent = "São múltiplos.";
+        		}
+        		else 
+        		{
+        			resultado.textContent = "Não são múltiplos.";
+        		}
+        	}
+
+        	
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Exercício 22</title>
+<style>
+
+    body {
+        font-family: verdana;
+    }
+    
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    fieldset {
+        width: 500px;
+        height: 450px;
+    }
+    
+    input {
+        margin-left: 10px;
+    }
+    
+    div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    h1, h2 {
+        text-align: center;
+    }
+    
+    fieldset, button, input {
+        border-radius: 5px;
+    }
+
+    .botao
+    {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+</style>
+</head>
+<body>
+    <h1>Programa Jovens Tegranos</h1>
+    <h2>Lista de Exercícios de Lógica e Programação</h2>
+    <form>
+    <fieldset>
+    <legend>Exercício 22</legend>
+        <div>
+            <label>Ler um número inteiro N, daí mostrar na tela a tabuada de N para 1 a 10.
+            </label>
+        </div>
+        <div>
+            <label>Deseja a tabuada para qual valor? </label> 
+            <input type="number" name="n" id="n" required>
+        </div>
+        <div class=botao>
+        <button onclick="calcular()" type="button">CALCULAR</button>
+        </div>
+        <div>
+        <label id="resultado1"></label>
+        </div>
+        <div>
+        <label id="resultado2"></label>
+        </div>
+        <div>
+        <label id="resultado3"></label>
+        </div>
+        <div>
+        <label id="resultado4"></label>
+        </div>
+        <div>
+        <label id="resultado5"></label>
+        </div>
+        <div>
+        <label id="resultado6"></label>
+        </div>
+        <div>
+        <label id="resultado7"></label>
+        </div>
+        <div>
+        <label id="resultado8"></label>
+        </div>
+        <div>
+        <label id="resultado9"></label>
+        </div>
+        <div>
+        <label id="resultado10"></label>
+        </div>
+    </fieldset>
+    </form>
+    
+    <script>
+    
+        function calcular() {
+
+        	var n = parseFloat(document.getElementById("n").value);
+        	var tabuada = [];
+        	var aux;	
+
+        	for (aux=1; aux<=10; aux++)
+        	{
+        		tabuada.push(aux*n);
+        	}
+
+        	var resultado1 = document.getElementById("resultado1");
+        	resultado1.textContent = n + " x 1 = " + tabuada[0];
+
+        	var resultado2 = document.getElementById("resultado2");
+        	resultado2.textContent = n + " x 2 = " + tabuada[1];
+
+        	var resultado3 = document.getElementById("resultado3");
+        	resultado3.textContent = n + " x 3 = " + tabuada[2];
+
+        	var resultado4 = document.getElementById("resultado4");
+        	resultado4.textContent = n + " x 4 = " + tabuada[3];
+
+        	var resultado5 = document.getElementById("resultado5");
+        	resultado5.textContent = n + " x 5 = " + tabuada[4];
+
+        	var resultado6 = document.getElementById("resultado6");
+        	resultado6.textContent = n + " x 6 = " + tabuada[5];
+        
+        	var resultado7 = document.getElementById("resultado7");
+        	resultado7.textContent = n + " x 7 = " + tabuada[6];
+        
+        	var resultado8 = document.getElementById("resultado8");
+        	resultado8.textContent = n + " x 8 = " + tabuada[7];
+
+        	var resultado9 = document.getElementById("resultado9");
+        	resultado9.textContent = n + " x 9 = " + tabuada[8];
+
+        	var resultado10 = document.getElementById("resultado10");
+        	resultado10.textContent = n + " x 10 = " + tabuada[9];
+        }
+        
+    </script>
+</body>
+</html>

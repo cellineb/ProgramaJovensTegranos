@@ -1,0 +1,103 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Exercício 10</title>
+<style>
+
+    body {
+        font-family: verdana;
+    }
+    
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    fieldset {
+        width: 500px;
+        height: 270px;
+    }
+    
+    input {
+        margin-left: 10px;
+    }
+    
+    div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    h1, h2 {
+        text-align: center;
+    }
+    
+    fieldset, button, input {
+        border-radius: 5px;
+    }
+
+    .botao
+    {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+</style>
+</head>
+<body>
+    <h1>Programa Jovens Tegranos</h1>
+    <h2>Lista de Exercícios de Lógica e Programação</h2>
+    <form>
+    <fieldset>
+    <legend>Exercício 10</legend>
+        <div>
+            <label>Fazer um programa para ler três números inteiros. Em seguida, mostrar qual o menor dentre os três números lidos. Em caso de empate, mostrar apenas uma vez.
+            </label>
+        </div>
+        <div>
+            <label>Digite o primeiro valor: </label> 
+            <input type="number" name="primeiro" id="primeiro" required>
+        </div>
+        <div>
+        	<label>Digite o segundo valor: </label>
+        	<input type="number" name="segundo" id="segundo" required>
+        </div>
+        <div>
+        	<label>Digite o terceiro valor: </label>
+        	<input type="number" name="terceiro" id="terceiro" required>
+        </div>
+        <div class=botao>
+        <button onclick="calcular()" type="button">CALCULAR</button>
+        </div>
+        <div>
+        <label id="resultado"></label>
+        </div>
+    </fieldset>
+    </form>
+    
+    <script>
+    
+        function calcular() {
+        	var primeiro = parseFloat(document.getElementById("primeiro").value);
+        	var segundo = parseFloat(document.getElementById("segundo").value);
+        	var terceiro = parseFloat(document.getElementById("terceiro").value);
+
+        	var menor = primeiro;
+
+        	if (segundo<menor) {
+        		menor = segundo;
+        	}
+
+        	if (terceiro<menor) {
+        		menor = terceiro;
+        	}
+
+        	var resultado = document.getElementById("resultado");
+        	resultado.textContent = "O menor valor é: " + menor;
+
+        }
+        
+    </script>
+</body>
+</html>

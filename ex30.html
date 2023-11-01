@@ -1,0 +1,251 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Exercício 30</title>
+<style>
+
+    body {
+        font-family: verdana;
+    }
+    
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    fieldset {
+        width: 400px;
+        height: 220px;
+    }
+    
+    input {
+        margin-left: 10px;
+    }
+    
+    div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    h1, h2 {
+        text-align: center;
+    }
+    
+    fieldset, button, input {
+        border-radius: 5px;
+    }
+
+    .botao
+    {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .input
+    {
+        text-align: center;
+    }
+    
+</style>
+</head>
+<body>
+    <h1>Programa Jovens Tegranos</h1>
+    <h2>Lista de Exercícios de Lógica e Programação</h2>
+    <form>
+    <fieldset>
+    <legend>Exercício 30</legend>
+        <div>
+            <label>Escreva um programa que receba um valor numérico de até dois algarismos e transcreva esse valor por extenso.
+            </label>
+        </div>
+        <div class="input">
+            <label>Número: </label> 
+        	<input type="number" name="n" id="n" required>
+        </div>
+        <div class=botao>
+        <button onclick="calcular()" type="button">TRANSCREVER</button>
+        </div>
+        <div>
+        <label id="resultado"></label>
+        </div>
+    </fieldset>
+    </form>
+    
+    <script>
+    
+        function calcular() {
+
+        	var n = document.getElementById("n").value;
+        	var n1 = "";
+
+        	var vet = n.split("");
+
+        	var resultado = document.getElementById("resultado");
+
+        	if (vet.length > 2)
+        	{
+        		resultado.textContent = "Digite um número de até dois algarismos."
+        	}
+
+        	else { 
+
+        		if (vet[0] == 1 || vet[1] == 0)
+        		{
+ 		       		if (n == 10)
+        			{
+        				n1 = "Dez";
+        			}
+    	    		else if (n == 11)
+	        		{
+        				n1 = "Onze"
+        			}
+        			else if (n == 12)
+    	    		{
+	        			n1 = "Doze"
+        			}
+       		 		else if (n == 13)
+    	    		{
+	        			n1 = "Treze"
+        			}
+        			else if (n == 14)
+        			{
+        				n1 = "Catorze"
+        			}
+        			else if (n == 15)
+        			{
+        				n1 = "Quinze"
+        			}
+        			else if (n == 16)
+    	    		{
+	        			n1 = "Dezesseis"
+        			}
+        			else if (n == 17)
+        			{
+    	    			n1 = "Dezessete"
+	        		}
+	        		else if (n == 18)
+        			{
+        				n1 = "Dezoito"
+        			}
+    	    		else if (n == 19)
+	        		{
+        				n1 = "Dezenove"
+        			}
+        			if (vet[0]==2)
+        			{
+        				n1 = "Vinte";
+    	    		}
+	        		else if (vet[0]==3)
+	        		{
+        				n1 = "Trinta";
+        			}
+        			else if (vet[0]==4)
+    	    		{
+	        			n1 = "Quarenta";
+        			}
+        			else if (vet[0]==5)
+        			{
+    	    			n1 = "Cinquenta";
+	        		} 
+        			else if (vet[0]==6)
+        			{
+        				n1 = "Sessenta";
+    	    		}
+	        		else if (vet[0]==7)
+        			{
+        				n1 = "Setenta";
+        			}
+    	    		else if (vet[0]==8)
+	        		{
+        				n1 = "Oitenta";
+        			}
+        			else if (vet[0]==9)
+    	    		{
+	        			n1 = "Noventa";
+        			}
+
+        			resultado.textContent = "Saída = " + n1;
+        		}
+        		else {
+
+        			if (vet[0]==2)
+        			{
+        				n1 = "Vinte";
+    	    		}
+	        		else if (vet[0]==3)
+	        		{
+        				n1 = "Trinta";
+        			}
+        			else if (vet[0]==4)
+    	    		{
+	        			n1 = "Quarenta";
+        			}
+        			else if (vet[0]==5)
+        			{
+    	    			n1 = "Cinquenta";
+	        		} 
+        			else if (vet[0]==6)
+        			{
+        				n1 = "Sessenta";
+    	    		}
+	        		else if (vet[0]==7)
+        			{
+        				n1 = "Setenta";
+        			}
+    	    		else if (vet[0]==8)
+	        		{
+        				n1 = "Oitenta";
+        			}
+        			else if (vet[0]==9)
+    	    		{
+	        			n1 = "Noventa";
+        			}
+
+        			if (vet[1]==1)
+    	    		{
+	        			n2 = "Um";
+        			}
+        			else if (vet[1]==2)
+        			{
+    	    			n2 = "Dois";
+	        		}
+        			else if (vet[1]==3)
+        			{
+        				n2 = "Três";
+    	    		}
+    	    		else if (vet[1]==4)
+	        		{
+        				n2 = "Quatro";
+        			}
+        			else if (vet[1]==5)
+    	    		{
+        				n2 = "Cinco";
+        			}
+        			else if (vet[1]==6)
+        			{
+        				n2 = "Seis";
+        			}
+        			else if (vet[1]==7)
+        			{
+        				n2 = "Sete";
+        			}
+        			else if (vet[1]==8)
+        			{
+        				n2 = "Oito";
+        			}
+        			else if (vet[1]==9)
+        			{
+        				n2 = "Nove";
+        			}
+
+        			resultado.textContent = "Saída = " + n1 + " e " + n2;
+        		}
+			}
+
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Exercício 8</title>
+<style>
+
+    body {
+        font-family: verdana;
+    }
+    
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    fieldset {
+        width: 500px;
+        height: 380px;
+    }
+    
+    input {
+        margin-left: 10px;
+    }
+    
+    div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    h1, h2 {
+        text-align: center;
+    }
+    
+    fieldset, button, input {
+        border-radius: 5px;
+    }
+
+    .botao
+    {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    p
+    {
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+    
+</style>
+</head>
+<body>
+    <h1>Programa Jovens Tegranos</h1>
+    <h2>Lista de Exercícios de Lógica e Programação</h2>
+    <form>
+    <fieldset>
+    <legend>Exercício 8</legend>
+        <div>
+            <label>Fazer um programa para ler três medidas A, B e C. Em seguida, calcular e mostrar (imprimir os dados com quatro casas decimais):
+            <p>a) a área do quadrado que tem lado A</p>
+            <p>b) a área do triângulo retângulo que base A e altura B</p>
+            <p>c) a área do trapézio que tem bases A e B, e altura C</p>
+            </label>
+        </div>
+        <div>
+            <label>Digite a medida A: </label> 
+            <input type="number" name="a" id="a" required>
+        </div>
+        <div>
+        	<label>Digite a medida B: </label>
+        	<input type="number" name="b" id="b" required>
+        </div>
+        <div>
+            <label>Digite a medida C: </label>
+            <input type="number" name="c" id="c" required>
+        </div>
+        <div class=botao>
+        <button onclick="calcular()" type="button">CALCULAR</button>
+        </div>
+        <div>
+        <label id="resultado1"></label>
+        </div>
+        <div>
+        <label id="resultado2"></label>
+        </div>
+        <div>
+        <label id="resultado3"></label>
+        </div>
+    </fieldset>
+    </form>
+    
+    <script>
+    
+        function calcular() {
+            var a = parseFloat(document.getElementById("a").value);
+            var b = parseFloat(document.getElementById("b").value);
+            var c = parseFloat(document.getElementById("c").value);
+
+            var aquadrado = (a*a).toFixed(4);
+
+            var atriangulo = ((a*b)/2).toFixed(4);
+
+            var atrapezio = (((a+b)*c)/2).toFixed(4);
+
+            var resultado1 = document.getElementById("resultado1");
+            resultado1.textContent = "A área do quadrado é: " + aquadrado;
+            var resultado2 = document.getElementById("resultado2");
+            resultado2.textContent = "A área do triângulo é: " + atriangulo;
+            var resultado3 = document.getElementById("resultado3");
+            resultado3.textContent = "A área do trapézio é: " + atrapezio;
+        }
+        
+    </script>
+</body>
+</html>

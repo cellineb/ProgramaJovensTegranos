@@ -1,0 +1,161 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Exercício 29</title>
+<style>
+
+    body {
+        font-family: verdana;
+    }
+    
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    fieldset {
+        width: 400px;
+        height: 220px;
+    }
+    
+    input {
+        margin-left: 10px;
+    }
+    
+    div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    h1, h2 {
+        text-align: center;
+    }
+    
+    fieldset, button, input {
+        border-radius: 5px;
+    }
+
+    .botao
+    {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .input
+    {
+        text-align: center;
+    }
+    
+</style>
+</head>
+<body>
+    <h1>Programa Jovens Tegranos</h1>
+    <h2>Lista de Exercícios de Lógica e Programação</h2>
+    <form>
+    <fieldset>
+    <legend>Exercício 29</legend>
+        <div>
+            <label>Pesquise o algoritmo de validação do CNPJ escreva um programa que valide qualquer CNPJ dado.
+            </label>
+        </div>
+        <div class="input">
+            <label>CNPJ: </label> 
+            <input type="number" name="cnpj" id="cnpj" required>
+        </div>
+        <div class=botao>
+        <button onclick="calcular()" type="button">VERIFICAR</button>
+        </div>
+        <div>
+        <label id="resultado"></label>
+        </div>
+    </fieldset>
+    </form>
+    
+    <script>
+    
+        function calcular() {
+
+        	var cnpj = document.getElementById("cnpj").value;
+
+        	var vetcnpj = cnpj.split("").map(Number);
+
+        	var resultado = document.getElementById("resultado");
+
+        	if (vetcnpj.length != 14)
+        	{
+        		resultado.textContent = "Saída = Inválido."
+        	}
+
+        	var digito1;
+        	var digito2;
+
+        	var x1 = 5 * vetcnpj[0];
+        	var x2 = 4 * vetcnpj[1];
+        	var x3 = 3 * vetcnpj[2];
+        	var x4 = 2 * vetcnpj[3];
+        	var x5 = 9 * vetcnpj[4];
+        	var x6 = 8 * vetcnpj[5];
+        	var x7 = 7 * vetcnpj[6];
+        	var x8 = 6 * vetcnpj[7];
+        	var x9 = 5 * vetcnpj[8];
+        	var x10 = 4 * vetcnpj[9];
+        	var x11 = 3 * vetcnpj[10];
+        	var x12 = 2 * vetcnpj[11];
+
+        	var soma = x1 + x2 + x3 + x4 + x5 + x6 + x7 + x8 + x9 + x10 + x11 + x12;
+
+        	var resto = soma%11;
+
+        	if (resto == 1 || resto == 0)
+        	{
+        		digito1 = 0;
+        	}
+        	else 
+        	{
+        		digito1 = 11 - resto;
+        	}
+
+        	var y1 = 6 * vetcnpj[0];
+        	var y2 = 5 * vetcnpj[1];
+        	var y3 = 4 * vetcnpj[2];
+        	var y4 = 3 * vetcnpj[3];
+        	var y5 = 2 * vetcnpj[4];
+        	var y6 = 9 * vetcnpj[5];
+        	var y7 = 8 * vetcnpj[6];
+        	var y8 = 7 * vetcnpj[7];
+        	var y9 = 6 * vetcnpj[8];
+        	var y10 = 5 * vetcnpj[9];
+        	var y11 = 4 * vetcnpj[10];
+        	var y12 = 3 * vetcnpj[11];
+        	var y13 = 2 * digito1;
+
+        	var soma2 = y1 + y2 + y3 + y4 + y5 + y6 + y7 + y8 + y9 + y10 + y11 + y12 + y13;
+
+        	var resto2 = soma2%11;
+
+        	if (resto2 == 1 || resto2 == 0)
+        	{
+        		digito2 = 0;
+        	}
+        	else 
+        	{
+        		digito2 = 11 - resto2;
+        	}
+
+        	var saida = "";
+
+        	if (digito1 == vetcnpj[12] && digito2 == vetcnpj[13])
+        	{
+        		resultado.textContent = "Saída = Válido.";
+        	}
+        	else 
+        	{
+        		resultado.textContent = "Saída = Inválido.";
+        	}
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Exercício 16</title>
+<style>
+
+    body {
+        font-family: verdana;
+    }
+    
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    fieldset {
+        width: 500px;
+        height: 330px;
+    }
+    
+    input {
+        margin-left: 10px;
+    }
+    
+    div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    h1, h2 {
+        text-align: center;
+    }
+    
+    fieldset, button, input {
+        border-radius: 5px;
+    }
+
+    .botao
+    {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .input, .label
+    {
+        text-align: center;
+    }
+
+</style>
+</head>
+<body>
+    <h1>Programa Jovens Tegranos</h1>
+    <h2>Lista de Exercícios de Lógica e Programação</h2>
+    <form>
+    <fieldset>
+    <legend>Exercício 16</legend>
+        <div>
+            <label>No arremesso de dardo, o atleta tem três chances para lançar o dardo à maior distância que conseguir. Você deve criar um programa para, dadas as medidas das três tentativas de lançamento, informar qual foi a maior.
+            </label>
+        </div>
+        <div class="label">
+            <label>Digite as três distâncias: </label>
+        </div>
+        <div class="input"> 
+            <input type="number" name="primeira" id="primeira" required>
+        </div>
+        <div class="input"> 
+            <input type="number" name="segunda" id="segunda" required>
+        </div>
+        <div class="input"> 
+            <input type="number" name="terceira" id="terceira" required>
+        </div>
+        <div class=botao>
+        <button onclick="calcular()" type="button">CALCULAR</button>
+        </div>
+        <div>
+        <label id="resultado"></label>
+        </div>
+    </fieldset>
+    </form>
+    
+    <script>
+    
+        function calcular() {
+
+        	var primeira = parseFloat(document.getElementById("primeira").value);
+        	var segunda = parseFloat(document.getElementById("segunda").value);
+        	var terceira = parseFloat(document.getElementById("terceira").value);
+
+        	var maior = primeira;
+
+        	if (segunda>maior)
+        	{
+        		maior = segunda;
+        	}
+
+        	if (terceira>maior)
+        	{
+        		maior = terceira;
+        	}
+
+        	var resultado = document.getElementById("resultado");
+        	resultado.textContent = "Maior distância = " + maior;
+
+        }
+        
+    </script>
+</body>
+</html>

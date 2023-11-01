@@ -1,0 +1,99 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Exercício 3</title>
+<style>
+
+    body {
+        font-family: verdana;
+    }
+    
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    fieldset {
+        width: 500px;
+        height: 310px;
+    }
+    
+    input {
+        margin-left: 10px;
+    }
+    
+    div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    h1, h2 {
+        text-align: center;
+    }
+    
+    fieldset, button, input {
+        border-radius: 5px;
+    }
+
+    .botao
+    {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+</style>
+</head>
+<body>
+    <h1>Programa Jovens Tegranos</h1>
+    <h2>Lista de Exercícios de Lógica e Programação</h2>
+    <form>
+    <fieldset>
+    <legend>Exercício 3</legend>
+        <div>
+            <label>Fazer um programa para ler o nome e idade de duas pessoas. Ao final mostrar uma mensagem com os nomes e a idade média entre essas pessoas, com uma casa decimal.
+            </label>
+        </div>
+        <div>
+            <label>Nome 1: </label> 
+            <input type="text" name="nome1" id="nome1" required>
+        </div>
+        <div>
+            <label>Idade 1: </label>
+            <input type="number" name="idade1" id="idade1" required>
+        </div>
+        <div>
+        	<label>Nome 2:</label>
+        	<input type="text" name="nome2" id="nome2" required>
+        </div>
+        <div>
+        	<label>Idade 2: </label>
+        	<input type="number" name="idade2" id="idade2" required>
+        </div>
+        <div class=botao>
+        <button onclick="calcular()" type="button">CALCULAR</button>
+        </div>
+        <div>
+        <label id="resultado"></label>
+        </div>
+    </fieldset>
+    </form>
+    
+    <script>
+    
+        function calcular() {
+        	var nome1 = document.getElementById("nome1").value;
+        	var idade1 = parseFloat(document.getElementById("idade1").value);
+        	var nome2 = document.getElementById("nome2").value;
+        	var idade2 = parseFloat(document.getElementById("idade2").value);
+
+        	var media = ((idade1 + idade2)/2).toFixed(1);
+            
+        	var resultado = document.getElementById("resultado");
+        	resultado.textContent = "A idade média de " + nome1 + " e " + nome2 + " é de " + media + " anos."
+        }
+        
+    </script>
+</body>
+</html>
